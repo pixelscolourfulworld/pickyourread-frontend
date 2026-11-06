@@ -16,10 +16,13 @@ export function getBooks(): Promise<Book[]> {
   headers.set('Accept', 'application/json')
   headers.set('X-Custom-Header', 'CustomValue')
 
-  const request: RequestInfo = new Request('http://localhost:8080/dev/api/pickyourread/test', {
-    method: 'GET',
-    headers: headers,
-  })
+  const request: RequestInfo = new Request(
+    import.meta.env.VITE_API_BASE + '/dev/api/pickyourread/test',
+    {
+      method: 'GET',
+      headers: headers,
+    },
+  )
 
   return fetch(request)
     .then((res) => res.json())
