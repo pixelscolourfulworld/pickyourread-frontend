@@ -1,21 +1,17 @@
 <script lang="ts" setup>
-import { reactive, watch } from 'vue'
-import { getBooks } from './components/fetchBooks'
 import Booklist from './components/booklist.vue'
-
-interface Book {
-  title: string
-  author: string
-  isbn: string
-  desc: string
-  publisher: string
-  apiKey: string
-  series: string
-  cover: string
-}
 </script>
 
 <template>
+  <header>
+    <img src="/src/assets/logoB.svg" class="logo" />
+    <nav class="home-nav">
+      <button class="nav-button">1 Button</button>
+      <button class="nav-button">2 Button</button>
+      <button class="nav-button">Button 3</button>
+      <button class="nav-button">Button 4</button>
+    </nav>
+  </header>
   <h1>Books</h1>
 
   <Suspense>
